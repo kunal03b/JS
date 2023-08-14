@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Event Handler</title>
+</head>
+
+<body>
+<div>    <h1>Event Handler</h1>
+</div>
+    <br>
+    Enter the age
+    <input type="number" id="age">
+    <br>
+    <br>
+    Description
+    <input type="text" id="desc">
+    <br><br>
+    <button id="btn">Submit</button>
+    <script>
+        function getCount(str) {
+            return str.split(' ').filter(function (num) {
+                return num != ''
+            }).length;
+        }
+        document.getElementById("age").onblur = function () {
+            var age = parseInt(document.getElementById("age").value);
+            if (age < 18) {
+                alert("Age is less than 18");
+            }
+        }
+
+        document.getElementById("btn").onclick = function () {
+            var descp = document.getElementById("desc").value
+            var count = getCount(descp)
+            console.log("Number of words are: " + count)
+        }
+
+    </script>
+
+</body>
+
+</html>
