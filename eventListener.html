@@ -9,23 +9,24 @@
 </head>
 
 <body>
-<div>    <h1>Event Handler</h1>
-</div>
-    <br>
-    Enter the age
-    <input type="number" id="age">
-    <br>
-    <br>
-    Description
-    <input type="text" id="desc">
-    <br><br>
-    <button id="btn">Submit</button>
+    <div class="container">
+        <h1>Event Handler</h1>
+        <label for="age">Enter the age</label>
+        <input type="number" id="age">
+        <br>
+        <label for="desc">Description</label>
+        <input type="text" id="desc">
+        <br>
+        <button id="btn">Submit</button>
+        <p id="wordCount">Word count: 0</p>
+    </div>
     <script>
         function getCount(str) {
             return str.split(' ').filter(function (num) {
-                return num != ''
+                return num.trim() !== '';
             }).length;
         }
+
         document.getElementById("age").onblur = function () {
             var age = parseInt(document.getElementById("age").value);
             if (age < 18) {
@@ -34,13 +35,12 @@
         }
 
         document.getElementById("btn").onclick = function () {
-            var descp = document.getElementById("desc").value
-            var count = getCount(descp)
-            console.log("Number of words are: " + count)
+            var descp = document.getElementById("desc").value;
+            var count = getCount(descp);
+            document.getElementById("wordCount").textContent = "Word count: " + count;
+            console.log("Number of words are: " + count);
         }
-
     </script>
-
 </body>
 
 </html>
