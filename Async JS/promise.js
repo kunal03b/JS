@@ -24,3 +24,12 @@ order(2000, () => console.log("order done"))
 
 // and so on....then .then .then.........
 // this is called promise chaining
+.catch(() => {
+    setTimeout(() => {
+        console.log("Customer left")
+    }, 2000)
+})
+
+.finally(() => {
+    setTimeout(()=>console.log("🫡"),4000)
+})
