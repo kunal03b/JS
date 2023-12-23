@@ -25,7 +25,6 @@ function production(Liquid_name, holder_selected, topping_name) {
                 setTimeout(() => {
                     console.log("Machine has been started...")
 
-
                     setTimeout(() => {
                         console.log(`holder selected is => ${stocks.holder[holder_selected]}`)
 
