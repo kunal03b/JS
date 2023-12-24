@@ -33,3 +33,16 @@ order(2000, () => console.log("order done"))
 .finally(() => {
     setTimeout(()=>console.log("🫡"),4000)
 })
+
+// allSetteled function  ....is used to check wheather the promise is fulfilled or rejected
+let promiseOne = new Promise((resolve, reject) => {
+    setTimeout(resolve,3000)})
+
+let promiseTwo = new Promise((resolve, reject) => {
+    setTimeout(reject,4000)})
+
+let promiseThree = new Promise((resolve, reject) => {
+    setTimeout(resolve,3000)})
+
+Promise.allSettled([promiseOne,promiseTwo,promiseThree]).then(data => console.log(data))
+.catch(error => console.log('something went wrong',error))
